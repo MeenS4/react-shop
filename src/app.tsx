@@ -1,10 +1,13 @@
 import styles from "./app.module.scss";
 
 import { ProductCard } from "./components";
+import { Navbar } from "./sections/navbar";
 
 export const App = () => {
   return (
     <main className={styles["app"]}>
+      <Navbar />
+
       <div className={styles["app__products"]}>
         <ProductCard title="Hoodie" price={79.99} />
 
