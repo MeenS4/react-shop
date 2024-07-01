@@ -15,6 +15,9 @@
 
   gap: 8px;
 
+  cursor: pointer;
+  user-select: none;
+
   &__title {
     font-size: 18px;
     font-weight: 500;
