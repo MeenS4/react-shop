@@ -1,6 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
 import "./index.scss";
+import ReactDOM from "react-dom/client";
+
+import store from "./store/store";
+import { Provider } from "react-redux";
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HomePage } from "./pages/home";
 
@@ -18,5 +21,7 @@ const router = createBrowserRouter([
 const entryPoint = document.querySelector("#root");
 
 ReactDOM.createRoot(entryPoint as HTMLElement).render(
-  <RouterProvider router={router} />,
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>,
 );
