@@ -8,11 +8,11 @@ export const HomePage = () => {
       <Navbar />
 
       <div className={styles["home-page__products"]}>
-        <ProductCard title="Hoodie" price={79.99} />
+        <ProductCard title="Hoodie" price={79.99} onClick={() => {}} />
 
-        <ProductCard title="T-shirt" price={19.99} />
+        <ProductCard title="T-shirt" price={19.99} onClick={() => {}} />
 
-        <ProductCard title="Sneakers" price={299.98} />
+        <ProductCard title="Sneakers" price={299.98} onClick={() => {}} />
       </div>
     </main>
   );
