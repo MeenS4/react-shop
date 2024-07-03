@@ -1,4 +1,3 @@
-import { MouseEventHandler } from "react";
 import styles from "./product-card.module.scss";
 
 export const ProductCard = ({
