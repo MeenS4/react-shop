@@ -1,0 +1,33 @@
+.navbar {
+  width: 100%;
+
+  padding: 16px 0px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 24px;
+
+  color: white;
+  background-color: #222;
+
+  &__logo {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &__cart {
+    font-size: 20px;
+    font-weight: 500;
+
+    text-decoration: none;
+    color: #fff;
+
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

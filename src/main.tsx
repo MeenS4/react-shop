@@ -1,7 +1,28 @@
-import React from "react"
-import ReactDOM from "react-dom/client"
-import { App } from "./app"
+import ReactDOM from "react-dom/client";
+import "./index.scss";
 
-const entryPoint = document.querySelector("#root")
+import { Provider } from "react-redux";
+import store from "./store/store";
 
-ReactDOM.createRoot(entryPoint as HTMLElement).render(<App />)
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { CartPage } from "./pages";
+import { HomePage } from "./pages/home";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage />,
+  },
+  {
+    path: "/cart",
+    element: <CartPage />,
+  },
+]);
+
+const entryPoint = document.querySelector("#root");
+
+ReactDOM.createRoot(entryPoint as HTMLElement).render(
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>,
+);

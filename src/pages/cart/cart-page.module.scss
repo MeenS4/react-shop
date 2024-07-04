@@ -1,0 +1,13 @@
+.cart-page {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  margin: 24px;
+
+  &__items {
+    display: flex;
+    gap: 12px;
+  }
+}
