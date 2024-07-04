@@ -9,6 +9,17 @@ const initialState: CartState = {
   items: [],
 };
 
+function findProductIndexById(array: Array<any>, id: string) {
+  const searchResult = array.findIndex(element => element.id === id);
+
+  if (searchResult < 0) {
+    console.error(`No matches for id: ${id}`);
+    return -1;
+  }
+
+  return searchResult;
+}
+
 export const cartSlice = createSlice({
   name: "cart",
   initialState,
@@ -16,16 +27,21 @@ export const cartSlice = createSlice({
     addProductToCart: (state, action) => {
       state.items.push(action.payload);
     },
-    removeItemFromCartById: (state, action) => {
-      const removedItemIndex = state.items.findIndex(
-        product => product.id === action.payload.id,
+    removeProductFromCartById: (state, action) => {
+      const targetProductIndex = findProductIndexById(
+        state.items,
+        action.payload,
       );
 
-      if (removedItemIndex >= 0) {
-        state.items.splice(removedItemIndex, 1);
-      } else {
-        console.error("Deleting item unsuccessful. No item found.");
+      if (targetProductIndex < 0) {
+        console.error(
+          `Unable to delete item, no matches found for id: ${action.payload}`,
+        );
+
+        return state;
       }
+
+      state.items.splice(targetProductIndex, 1);
 
       return state;
     },
@@ -34,6 +50,7 @@ export const cartSlice = createSlice({
 
 export const selectCartItems = (state: any) => state.cart.items;
 
-export const { addProductToCart, removeItemFromCartById } = cartSlice.actions;
+export const { addProductToCart, removeProductFromCartById } =
+  cartSlice.actions;
 
 export default cartSlice.reducer;
