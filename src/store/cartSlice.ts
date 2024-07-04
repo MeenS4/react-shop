@@ -31,7 +31,7 @@ export const cartSlice = createSlice({
     removeProductFromCartById: (state, action) => {
       const targetProductIndex = findProductIndexById(
         state.items,
-        action.payload,
+        action.payload.id,
       );
 
       if (targetProductIndex < 0) {
