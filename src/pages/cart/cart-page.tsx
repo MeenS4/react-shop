@@ -2,9 +2,9 @@ import styles from "./cart-page.module.scss";
 
 import { useSelector } from "react-redux";
 
+import { ProductCard } from "../../components";
 import { selectCartItems } from "../../store/cartSlice";
 import { Product } from "../../store/productSlice";
-import { ProductCard } from "../../components";
 
 export const CartPage = () => {
   const cartItems = useSelector(selectCartItems);

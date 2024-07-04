@@ -1,7 +1,9 @@
+import styles from "./home-page.module.scss";
+
 import { useDispatch } from "react-redux";
+
 import { ProductCard } from "../../components";
 import { Navbar } from "../../sections";
-import styles from "./home-page.module.scss";
 import { addProductToCart } from "../../store/cartSlice";
 
 export const HomePage = () => {
