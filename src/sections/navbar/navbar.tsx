@@ -1,5 +1,5 @@
-import styles from "./navbar.module.scss";
 import { Link } from "react-router-dom";
+import styles from "./navbar.module.scss";
 
 export const Navbar = () => {
   return (
@@ -9,8 +9,6 @@ export const Navbar = () => {
       <Link className={styles["navbar__cart"]} to={"/cart"}>
         Go To Cart
       </Link>
-
-      {/* <p className={styles["navbar__cart"]}>[Future navigation to cart]</p> */}
     </section>
   );
 };
