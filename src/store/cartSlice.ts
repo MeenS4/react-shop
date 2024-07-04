@@ -14,7 +14,7 @@ function findProductIndexById(array: Array<any>, id: string) {
 
   if (searchResult < 0) {
     console.error(`No matches for id: ${id}`);
-    return -1;
+    return searchResult;
   }
 
   return searchResult;
