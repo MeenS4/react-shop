@@ -9,7 +9,7 @@ export const ProductCard = ({
   id: string;
   title: string;
   price: number;
-  onClick: Function;
+  onClick?: Function;
 }) => {
   return (
     <div className={styles["product-card"]}>
@@ -17,14 +17,16 @@ export const ProductCard = ({
 
       <p className={styles["product-card__price"]}>${price}</p>
 
-      <div
-        className={styles["product-card__button"]}
-        onClick={() => {
-          onClick(id);
-        }}
-      >
-        Add to cart
-      </div>
+      {onClick ? (
+        <div
+          className={styles["product-card__button"]}
+          onClick={() => {
+            onClick({ id, title, price, onClick });
+          }}
+        >
+          Add to cart
+        </div>
+      ) : null}
     </div>
   );
 };
