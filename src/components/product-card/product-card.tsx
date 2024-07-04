@@ -5,11 +5,13 @@ export const ProductCard = ({
   title,
   price,
   onClick,
+  buttonLabel = "Add to cart",
 }: {
   id: string;
   title: string;
   price: number;
   onClick?: Function;
+  buttonLabel?: string;
 }) => {
   return (
     <div className={styles["product-card"]}>
@@ -24,7 +26,7 @@ export const ProductCard = ({
             onClick({ id, title, price, onClick });
           }}
         >
-          Add to cart
+          {buttonLabel}
         </div>
       ) : null}
     </div>

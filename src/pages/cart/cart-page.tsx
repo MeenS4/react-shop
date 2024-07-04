@@ -1,13 +1,18 @@
 import styles from "./cart-page.module.scss";
 
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { ProductCard } from "../../components";
-import { selectCartItems } from "../../store/cartSlice";
+import { removeItemFromCartById, selectCartItems } from "../../store/cartSlice";
 import { Product } from "../../store/productSlice";
 
 export const CartPage = () => {
   const cartItems = useSelector(selectCartItems);
+  const dispatch = useDispatch();
+
+  const handleItemRemove = (id: string) => {
+    dispatch(removeItemFromCartById(id));
+  };
 
   return (
     <main className={styles["cart-page"]}>
@@ -19,6 +24,8 @@ export const CartPage = () => {
             id={product.id}
             title={product.title}
             price={product.price}
+            onClick={handleItemRemove}
+            buttonLabel="Remove from cart"
           />
         ))}
       </div>
