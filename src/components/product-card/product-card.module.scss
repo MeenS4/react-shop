@@ -15,6 +15,8 @@
 
   gap: 8px;
 
+  user-select: none;
+
   &__title {
     font-size: 18px;
     font-weight: 500;
@@ -23,5 +25,21 @@
   &__price {
     font-size: 16px;
     font-weight: 400;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    margin-top: 12px;
+    padding: 4px 12px;
+
+    border-radius: 4px;
+
+    background-color: #fff;
+    color: #111;
+
+    cursor: pointer;
   }
 }

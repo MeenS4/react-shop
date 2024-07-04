@@ -1,4 +1,4 @@
-.app {
+.home-page {
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -6,5 +6,7 @@
   &__products {
     display: flex;
     gap: 16px;
+
+    margin-inline: 16px;
   }
 }
