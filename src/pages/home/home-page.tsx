@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 
 import { ProductCard } from "../../components";
 import { Navbar } from "../../sections";
+
 import { addProductToCart } from "../../store/cartSlice";
 
 export const HomePage = () => {
